@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+title: "Bulirsch-Stoer Instability in ORSA with Java Plotly Visualisation"
+message: "If you use this repository, please cite it using these metadata."
+type: software
+authors:
+  - given-names: Travis
+    family-names: Stenborg
+    orcid: "https://orcid.org/0000-0002-2693-9628"
+url: "https://github.com/tstenborg/bulirsch-stoer-instability"
+abstract: >-
+  "This repository holds digital resources associated with the article \
+  'Bulirsch-Stoer Instability in ORSA with Java Plotly Visualisation'. That \
+  article discusses numerical instability of the Bulirsch-Stoer algorithm, as \
+  implemented in the legacy GUI application Orbit Reconstruction, Simulation \
+  and Analysis (ORSA). The instability was demonstrated with Plotly \
+  visualisation tools, called from Java."
+keywords:
+  - astronomy
+  - "bulirsch-stoer"
+  - visualisation
+preferred-citation:
+  authors:
+    - given-names: "Travis N."
+      family-names: Stenborg
+  collection-title: "Astronomical Data Analysis Software and Systems XXXI"
+  conference:
+    # "conference, name" appears in BibTeX format only, as "series".
+    name: "Astronomical Society of the Pacific Conference Series, volume 535"
+  editors:
+    # "editors" appear in BibTeX format only, as "editor".
+    - given-names: "Benjamin V."
+      family-names: Hugo
+    - given-names: "Ruby"
+      family-names: "Van Rooyen"
+    - given-names: "Oleg M."
+      family-names: Smirnov
+  end: 462  # Last page number.
+  # "notes" values should be formatted as single lines.
+  notes: "Proceedings of Astronomical Data Analysis Software and Systems (ADASS) XXXI, a hybrid (physical and online) conference held in Cape Town, South Africa, 24 to 28 Oct, 2021."
+  publisher:
+    # "publisher, name" appears in BibTeX format only, as "publisher".
+    name: "Astronomical Society of the Pacific"
+  start: 459  # First page number.
+  title: "Bulirsch-Stoer Instability in ORSA with Java Plotly Visualisation"
+  type: conference-paper
+  volume: 535  # Appears in APA format only.
+  year: 2024
