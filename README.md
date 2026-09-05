@@ -64,12 +64,12 @@ The repository code has been tested in the following environment.
 
 <br>
 
-| Type     | Component        | Version                                 |
-| :------- | :--------------- | :-------------------------------------- |
-| Platform | Operating system | Windows 11, 25H2 (OS Build 26200.8973)  |
-| Software | Apache Maven     | 3.9.16                                  |
-| &quot;   | Browser          | Microsoft Edge, 151.0.4129.59 (64-bit)  |
-| &quot;   | Java             | 26.0.1                                  |
+| Type     | Component        | Version                                |
+| :------- | :--------------- | :------------------------------------- |
+| Platform | Operating system | Windows 11, 25H2 (OS Build 26200.8973) |
+| Software | Apache Maven     | 3.9.16                                 |
+| &quot;   | Browser          | Microsoft Edge, 151.0.4129.59 (64-bit) |
+| &quot;   | Java             | 26.0.1                                 |
 
 </details>
 

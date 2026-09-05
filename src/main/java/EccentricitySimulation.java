@@ -29,13 +29,16 @@ public final class EccentricitySimulation {
         EccentricitySimulation.class.getResourceAsStream(DATA_FILE);
     if (inputStream == null) {
       throw new IllegalArgumentException(
-          "Data file " + DATA_FILE + " not found in src/main/resources/."
-        );
+          "Data file " + DATA_FILE + " not found in src/main/resources/.");
     }
 
     ColumnType[] types = {
-      ColumnType.INTEGER, ColumnType.DOUBLE, ColumnType.DOUBLE,
-      ColumnType.DOUBLE, ColumnType.DOUBLE, ColumnType.DOUBLE,
+      ColumnType.INTEGER,
+      ColumnType.DOUBLE,
+      ColumnType.DOUBLE,
+      ColumnType.DOUBLE,
+      ColumnType.DOUBLE,
+      ColumnType.DOUBLE,
       ColumnType.DOUBLE
     };
     Table table =
@@ -101,8 +104,9 @@ public final class EccentricitySimulation {
             .xAxis(Axis.builder().title(xAxis).build())
             .yAxis(Axis.builder().title(yAxis).build())
             .build();
-    Plot.show(new Figure(layoutRK,
-        new Trace[] {traceJupExp, traceSatExp, traceJupSimRK, traceSatSimRK}));
+    Plot.show(
+        new Figure(
+            layoutRK, new Trace[] {traceJupExp, traceSatExp, traceJupSimRK, traceSatSimRK}));
 
     // Plot results of Bulirsch-Stoer simulation.
     Layout layoutBS = Layout.builder()
@@ -110,7 +114,8 @@ public final class EccentricitySimulation {
         .xAxis(Axis.builder().title(xAxis).build())
         .yAxis(Axis.builder().title(yAxis).build())
         .build();
-    Plot.show(new Figure(layoutBS,
-        new Trace[] {traceJupExp, traceSatExp, traceJupSimBS, traceSatSimBS}));
+    Plot.show(
+        new Figure(
+            layoutBS, new Trace[] {traceJupExp, traceSatExp, traceJupSimBS, traceSatSimBS}));
   }
 }
