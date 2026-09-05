@@ -15,7 +15,8 @@ demonstrated with Plotly visualisation tools, called from Java.
 <td>
 <figure>
   <div align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/eccentricity-simulation-with-runge-kutta-dm.svg"><img alt="Planetary Runge-Kutta integration with ORSA." loading="lazy" src="assets/eccentricity-simulation-with-runge-kutta-lm.svg" width="74%"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="assets/eccentricity-simulation-with-bulirsch-stoer-dm.svg"><img alt="Planetary Bulirsch-Stoer integration with ORSA." loading="lazy" src="assets/eccentricity-simulation-with-bulirsch-stoer-lm.svg" width="74%"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/eccentricity-simulation-with-runge-kutta-dm.svg"><img alt="Planetary Runge-Kutta integration with ORSA." loading="lazy" src="assets/eccentricity-simulation-with-runge-kutta-lm.svg" width="74%"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/eccentricity-simulation-with-bulirsch-stoer-dm.svg"><img alt="Planetary Bulirsch-Stoer integration with ORSA." loading="lazy" src="assets/eccentricity-simulation-with-bulirsch-stoer-lm.svg" width="74%"></picture>
   </div>
   <figcaption><sup>Figure 1. Eccentricity variation of Jupiter (low amplitude) and Saturn (high amplitude) over 200,000 years, from Runge-Kutta (plot 1) and Bulirsch-Stoer (plot 2) integration in legacy ORSA. Analytical estimates are the dotted lines. Runge-Kutta generally matches estimates. Bulirsch-Stoer diverges. Adapted from [<a href="#references">1</a>].<sup></figcaption>
 </figure>
