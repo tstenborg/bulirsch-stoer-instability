@@ -60,14 +60,13 @@ public final class EccentricitySimulation {
    * A line style (blue, solid) for use in plots.
    * Class: Line.
    */
-  private static final Line BLUE_SOLID =
-      Line.builder().color(HEX_BLUE).build();
+  private static final Line BLUE_SOLID = Line.builder().color(HEX_BLUE).build();
 
   /**
    * A line style (dark grey, solid) for use in plots.
    * Class: Line.
    */
-  private static final Line DARK_GREY_SOLID =
+  private static final Line DARK_GREY_SOLID = 
       Line.builder().color(HEX_DARK_GREY).build();
 
   /**
@@ -166,8 +165,7 @@ public final class EccentricitySimulation {
             .build();
 
     // Prepare plot Strings.
-    String plotTitle =
-        new java.lang.String("Eccentricity Simulation Over 200,000 Years");
+    String plotTitle = new String("Eccentricity Simulation Over 200,000 Years");
     String xAxis = new String("Years");
     String yAxis = new String("Eccentricity");
 
