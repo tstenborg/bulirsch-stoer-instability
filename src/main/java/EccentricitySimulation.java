@@ -45,7 +45,6 @@ public final class EccentricitySimulation {
   /**
    * A line style (black, dashdot) for use in plots.
    * Class: Line.
-   * {@value}
    */
   private static final Line BLACK_DASH_DOT =
       Line.builder().color(HEX_BLACK).dash(Line.Dash.DASH_DOT).build();
@@ -53,7 +52,6 @@ public final class EccentricitySimulation {
   /**
    * A line style (black, dotted) for use in plots.
    * Class: Line.
-   * {@value}
    */
   private static final Line BLACK_DOT =
       Line.builder().color(HEX_BLACK).dash(Line.Dash.DOT).build();
@@ -61,7 +59,6 @@ public final class EccentricitySimulation {
   /**
    * A line style (blue, solid) for use in plots.
    * Class: Line.
-   * {@value}
    */
   private static final Line BLUE_SOLID =
       Line.builder().color(HEX_BLUE).build();
@@ -69,7 +66,6 @@ public final class EccentricitySimulation {
   /**
    * A line style (dark grey, solid) for use in plots.
    * Class: Line.
-   * {@value}
    */
   private static final Line DARK_GREY_SOLID =
       Line.builder().color(HEX_DARK_GREY).build();
