@@ -77,14 +77,21 @@ public final class EccentricitySimulation {
    * Data type: int.
    * {@value}
    */
-  public static final int TRACES_PER_PLOT = 4;
+  private static final int TRACES_PER_PLOT = 4;
 
   // Configure the class as a non-instantiable utility class.
   private EccentricitySimulation() {
     throw new AssertionError("Utility classes should not be instantiated");
   }
 
-  public static void main(final String[] args) throws Exception {
+  /**
+   * Plots the evolution of planetary eccentricities over 200,000 years.
+   * One plot shows eccentricity simulated via a Runge-Kutta method.
+   * Another plot shows eccentricity simulated via a Bulirsch-Stoer method.
+   *
+   * @throws IllegalArgumentException if the expected CSV data file is missing
+   */
+  public static void main() throws Exception {
     // Read packaged CSV data.
     InputStream inputStream =
         EccentricitySimulation.class.getResourceAsStream(DATA_FILE);
