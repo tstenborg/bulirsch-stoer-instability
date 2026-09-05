@@ -13,19 +13,75 @@ import tech.tablesaw.plotly.traces.ScatterTrace;
 import tech.tablesaw.plotly.traces.Trace;
 
 public final class EccentricitySimulation {
+
+  /**
+   * The file path, including file extension, of a file that holds the data the
+   * program will plot. Should be a CSV file.
+   * Class: String.
+   */
   private static final String DATA_FILE = "orsa-output.csv";
+
+  /**
+   * An RGB hex triplet specifying a black colour for use in plots.
+   * Class: String.
+   * {@value}
+   */
   private static final String HEX_BLACK = "#000000";
+
+  /**
+   * An RGB hex triplet specifying a blue colour for use in plots.
+   * Class: String.
+   * {@value}
+   */
   private static final String HEX_BLUE = "#51B6D5";
+
+  /**
+   * An RGB hex triplet specifying a dark grey colour for use in plots.
+   * Class: String.
+   * {@value}
+   */
   private static final String HEX_DARK_GREY = "#6A7A89";
 
+  /**
+   * A line style (black, dashdot) for use in plots.
+   * Class: Line.
+   * {@value}
+   */
   private static final Line BLACK_DASH_DOT =
       Line.builder().color(HEX_BLACK).dash(Line.Dash.DASH_DOT).build();
+
+  /**
+   * A line style (black, dotted) for use in plots.
+   * Class: Line.
+   * {@value}
+   */
   private static final Line BLACK_DOT =
       Line.builder().color(HEX_BLACK).dash(Line.Dash.DOT).build();
+
+  /**
+   * A line style (blue, solid) for use in plots.
+   * Class: Line.
+   * {@value}
+   */
   private static final Line BLUE_SOLID =
       Line.builder().color(HEX_BLUE).build();
+
+  /**
+   * A line style (dark grey, solid) for use in plots.
+   * Class: Line.
+   * {@value}
+   */
   private static final Line DARK_GREY_SOLID =
       Line.builder().color(HEX_DARK_GREY).build();
+
+  /**
+   * The number of traces (the data and visual properties of a data series)
+   * that appear on each plot. Defined as named constant instead of using
+   * magic numbers for array manipulation.
+   * Data type: int.
+   * {@value}
+   */
+  public static final int TRACES_PER_PLOT = 4;
 
   // Configure the class as a non-instantiable utility class.
   private EccentricitySimulation() {
@@ -56,51 +112,51 @@ public final class EccentricitySimulation {
                 CsvReadOptions.builder(inputStream).columnTypes(types));
 
     IntColumn x = table.intColumn("time");
-    DoubleColumn yJupCalc = table.doubleColumn("e Jup calc");
-    DoubleColumn yJupRK = table.doubleColumn("e Jup Runge-Kutta");
-    DoubleColumn yJupBS = table.doubleColumn("e Jup Bulirsch-Stoer");
-    DoubleColumn ySatCalc = table.doubleColumn("e Sat calc");
-    DoubleColumn ySatRK = table.doubleColumn("e Sat Runge-Kutta");
-    DoubleColumn ySatBS = table.doubleColumn("e Sat Bulirsch-Stoer");
+    DoubleColumn yJupiterCalc = table.doubleColumn("e Jup calc");
+    DoubleColumn yJupiterRK = table.doubleColumn("e Jup Runge-Kutta");
+    DoubleColumn yJupiterBS = table.doubleColumn("e Jup Bulirsch-Stoer");
+    DoubleColumn ySaturnCalc = table.doubleColumn("e Sat calc");
+    DoubleColumn ySaturnRK = table.doubleColumn("e Sat Runge-Kutta");
+    DoubleColumn ySaturnBS = table.doubleColumn("e Sat Bulirsch-Stoer");
 
     // Configure plot traces.
-    ScatterTrace traceJupExp =
-        ScatterTrace.builder(x, yJupCalc)
+    ScatterTrace traceJupiterExp =
+        ScatterTrace.builder(x, yJupiterCalc)
             .mode(ScatterTrace.Mode.LINE)
             .name("Jupiter, expected")
             .line(BLACK_DASH_DOT)
             .build();
 
-    ScatterTrace traceJupSimRK =
-        ScatterTrace.builder(x, yJupRK)
+    ScatterTrace traceJupiterSimRK =
+        ScatterTrace.builder(x, yJupiterRK)
             .mode(ScatterTrace.Mode.LINE)
             .name("Jupiter, simulated")
             .line(DARK_GREY_SOLID)
             .build();
 
-    ScatterTrace traceJupSimBS =
-        ScatterTrace.builder(x, yJupBS)
+    ScatterTrace traceJupiterSimBS =
+        ScatterTrace.builder(x, yJupiterBS)
             .mode(ScatterTrace.Mode.LINE)
             .name("Jupiter, simulated")
             .line(DARK_GREY_SOLID)
             .build();
 
-    ScatterTrace traceSatExp =
-        ScatterTrace.builder(x, ySatCalc)
+    ScatterTrace traceSaturnExp =
+        ScatterTrace.builder(x, ySaturnCalc)
             .mode(ScatterTrace.Mode.LINE)
             .name("Saturn, expected")
             .line(BLACK_DOT)
             .build();
 
-    ScatterTrace traceSatSimRK =
-        ScatterTrace.builder(x, ySatRK)
+    ScatterTrace traceSaturnSimRK =
+        ScatterTrace.builder(x, ySaturnRK)
             .mode(ScatterTrace.Mode.LINE)
             .name("Saturn, simulated")
             .line(BLUE_SOLID)
             .build();
 
-    ScatterTrace traceSatSimBS =
-        ScatterTrace.builder(x, ySatBS)
+    ScatterTrace traceSaturnSimBS =
+        ScatterTrace.builder(x, ySaturnBS)
             .mode(ScatterTrace.Mode.LINE)
             .name("Saturn, simulated")
             .line(BLUE_SOLID)
@@ -113,9 +169,9 @@ public final class EccentricitySimulation {
     String yAxis = new String("Eccentricity");
 
     // Prepare plot Traces.
-    Trace[] traceEccentricities = new Trace[4];
-    traceEccentricities[0] = traceJupExp;
-    traceEccentricities[1] = traceSatExp;
+    Trace[] traceEccentricities = new Trace[TRACES_PER_PLOT];
+    traceEccentricities[0] = traceJupiterExp;
+    traceEccentricities[1] = traceSaturnExp;
 
     // Plot results of Runge-Kutta simulation.
     Layout layoutRK =
@@ -124,8 +180,8 @@ public final class EccentricitySimulation {
             .xAxis(Axis.builder().title(xAxis).build())
             .yAxis(Axis.builder().title(yAxis).build())
             .build();
-    traceEccentricities[2] = traceJupSimRK;
-    traceEccentricities[3] = traceSatSimRK;
+    traceEccentricities[TRACES_PER_PLOT - 2] = traceJupiterSimRK;
+    traceEccentricities[TRACES_PER_PLOT - 1] = traceSaturnSimRK;
     Plot.show(new Figure(layoutRK, traceEccentricities));
 
     // Plot results of Bulirsch-Stoer simulation.
@@ -135,8 +191,8 @@ public final class EccentricitySimulation {
             .xAxis(Axis.builder().title(xAxis).build())
             .yAxis(Axis.builder().title(yAxis).build())
             .build();
-    traceEccentricities[2] = traceJupSimBS;
-    traceEccentricities[3] = traceSatSimBS;
+    traceEccentricities[TRACES_PER_PLOT - 2] = traceJupiterSimBS;
+    traceEccentricities[TRACES_PER_PLOT - 1] = traceSaturnSimBS;
     Plot.show(new Figure(layoutBS, traceEccentricities));
   }
 }
