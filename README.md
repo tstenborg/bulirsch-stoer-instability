@@ -1,6 +1,6 @@
 # Bulirsch-Stoer Instability in ORSA with Java Plotly Visualisation
 
-![human-only code](https://img.shields.io/badge/human--only-code-white)
+![ai-assisted code](https://img.shields.io/badge/ai--assisted-code-white)
 
 This repository holds digital resources associated with the article
 "Bulirsch-Stoer Instability in ORSA with Java Plotly Visualisation"
@@ -49,11 +49,11 @@ simulated using Runge-Kutta and Bulirsch-Stoer integration in ORSA.
 
 ## Software Requirements
 
-| Software     | Notes                         |
-| :----------- | :---------------------------- |
-| Apache Maven | Build automation tool.        |
-| Browser      | Program output is HTML files. |
-| Java         | Version 26.x required.        |
+| Software               | Notes                                                                                                            |
+| :--------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| Apache Maven<br>&nbsp; | Build automation tool.<br>&nbsp;&nbsp;&nbsp;[Available here](https://maven.apache.org/). Free.                   |
+| Browser                | Program output is HTML files.                                                                                    |
+| Java<br>&nbsp;         | Java Development Kit (JDK) required.<br>&nbsp;&nbsp;&nbsp;N.B. A Java Runtime Environment alone is insufficient. |
 
 ## Quality Assurance
 
@@ -66,10 +66,10 @@ The repository code has been tested in the following environment.
 
 | Type     | Component        | Version                                |
 | :------- | :--------------- | :------------------------------------- |
-| Platform | Operating system | Windows 11, 25H2 (OS Build 26200.8973) |
+| Platform | Operating system | Windows 11, 25H2 (OS Build 26200.9278) |
 | Software | Apache Maven     | 3.9.16                                 |
 | &quot;   | Browser          | Microsoft Edge, 151.0.4129.59 (64-bit) |
-| &quot;   | Java             | 26.0.1                                 |
+| &quot;   | Java             | JDK 26.0.2.1                           |
 
 </details>
 
@@ -84,10 +84,11 @@ Maven can be checked from the command line:
 
 ### Java
 
-The repository assumes 26.x is available. The currently installed version of
-Java can be checked from the command line:
+The repository assumes a Java Development Kit is available. That can be
+confirmed by checking if a Java compiler responds to version queries from the
+command line:
 
-    java -version
+    javac -version
 
 ### JAR Build
 
@@ -111,6 +112,9 @@ browser.
 This work was supported by the Australian Research Council Training Centre in
 Data Analytics for Resources and Environments (project ICI9010031).
 
+This repository used Gemini Gemini [[2](#references)] as an assistive tool for
+Java linting.
+
 ## References
 
 1. T. N. Stenborg, "Bulirsch-Stoer Instability in ORSA with Java Plotly
@@ -120,3 +124,6 @@ Data Analytics for Resources and Environments (project ICI9010031).
    [View PDF](https://aspbooks.org/publications/535/459.pdf)
    &nbsp; [View at publisher](https://aspbooks.org/custom/publications/paper/535-0459.html)
    &nbsp; [SciX](https://scixplorer.org/abs/2024ASPC..535..459S/abstract)
+
+2. _Google Gemini_. (Large language model, September 2026 release). Google.
+   [Online]. Available: [google.com](https://www.google.com/).
