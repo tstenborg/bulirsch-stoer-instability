@@ -49,11 +49,11 @@ simulated using Runge-Kutta and Bulirsch-Stoer integration in ORSA.
 
 ## Software Requirements
 
-| Software               | Notes                                                                                                            |
-| :--------------------- | :--------------------------------------------------------------------------------------------------------------- |
-| Apache Maven<br>&nbsp; | Build automation tool.<br>&nbsp;&nbsp;&nbsp;[Available here](https://maven.apache.org/). Free.                   |
-| Browser                | Program output is HTML files.                                                                                    |
-| Java<br>&nbsp;         | Java Development Kit (JDK) required.<br>&nbsp;&nbsp;&nbsp;N.B. A Java Runtime Environment alone is insufficient. |
+| Software               | Notes                                                                                                        |
+| :--------------------- | :----------------------------------------------------------------------------------------------------------- |
+| Apache Maven<br>&nbsp; | Build automation tool.<br>&nbsp;&nbsp;&nbsp;[Available here](https://maven.apache.org/). Free.               |
+| Browser                | Program output is HTML files.                                                                                |
+| Java<br>&nbsp;         | Java Development Kit (JDK) 26.x.<br>&nbsp;&nbsp;&nbsp;N.B. A Java Runtime Environment alone is insufficient. |
 
 ## Quality Assurance
 
@@ -84,7 +84,7 @@ Maven can be checked from the command line:
 
 ### Java
 
-The repository assumes a Java Development Kit is available. That can be
+The repository assumes Java Development Kit 26.x is available. That can be
 confirmed by checking if a Java compiler responds to version queries from the
 command line:
 
