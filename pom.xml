@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>adass.2021</groupId>
+  <artifactId>bulirsch-stoer-instability</artifactId>
+  <version>1.0.0</version>
+
+  <name>Bulirsch Stoer Instability in ORSA</name>
+
+  <properties>
+    <!-- Assume Java 26.x. -->
+    <maven.compiler.release>26</maven.compiler.release>
+    <!-- Specify character encoding to increase multiplatform portability. -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <!-- Ensure Tablesaw is available. -->
+  <dependencies>
+    <dependency>
+      <groupId>tech.tablesaw</groupId>
+      <artifactId>tablesaw-core</artifactId>
+      <version>0.44.4</version>
+    </dependency>
+    <dependency>
+      <groupId>tech.tablesaw</groupId>
+      <artifactId>tablesaw-jsplot</artifactId>
+      <version>0.44.4</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>bulirsch-stoer-instability</finalName>
+    <plugins>
+      <!-- Assembly plugin configuration. -->	
+      <!-- Package dependencies into output JAR files (create a fat JAR). -->	
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>EccentricitySimulation</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Exclude a thin JAR. -->
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.5.1</version>
+        <executions>
+          <execution>
+            <id>default-jar</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
